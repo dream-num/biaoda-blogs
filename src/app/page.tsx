@@ -8,10 +8,10 @@ export default function Home() {
     <div>
       <div className="max-w-2xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">
-          Capalyze Blog
+          表答博客
         </h1>
         <p className="text-lg text-muted-foreground">
-          Insights and tips on turning scattered data into intelligent, data-driven decisions
+          分享如何将分散的数据转化为智能、数据驱动决策的见解与技巧
         </p>
       </div>
 

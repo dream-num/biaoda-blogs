@@ -7,36 +7,36 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-site.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blog.biaoda.me";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Capalyze Blog",
-    template: `%s | Capalyze Blog`,
+    default: "表答博客",
+    template: `%s | 表答博客`,
   },
-  description: "Capalyze Blog shares insights, tips, and case studies on turning scattered data into intelligent, data-driven decisions with AI-powered analysis.",
-  keywords: "Capalyze Blog, Data Collection, Data Scraping, Data Analysis, Data Crawling, AI Agent, Data Visualization, Sentiment Analysis, Keyword Extraction, OLAP, E-commerce Analytics, Social Media Trends, Vacation Rental Optimization, Data Insights, Business Intelligence, AI Data Tools",
+  description: "表答博客分享如何将分散的数据转化为智能、数据驱动决策的见解、技巧和案例，利用 AI 分析赋能。",
+  keywords: "表答博客, 数据采集, 数据抓取, 数据分析, 数据爬取, AI智能体, 数据可视化, 情感分析, 关键词提取, OLAP, 电商分析, 社交媒体趋势, 民宿优化, 数据洞察, 商业智能, AI数据工具",
   openGraph: {
-    title: "Capalyze Blog",
-    description: "Capalyze Blog shares insights, tips, and case studies on turning scattered data into intelligent, data-driven decisions with AI-powered analysis.",
+    title: "表答博客",
+    description: "表答博客分享如何将分散的数据转化为智能、数据驱动决策的见解、技巧和案例，利用 AI 分析赋能。",
     url: siteUrl,
-    siteName: "Capalyze Blog",
+    siteName: "表答博客",
     images: [
       {
         url: `${siteUrl}/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "Capalyze Blog",
+        alt: "表答博客",
       },
     ],
-    locale: "en_US",
+    locale: "zh_CN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Capalyze Blog",
-    description: "Capalyze Blog shares insights, tips, and case studies on turning scattered data into intelligent, data-driven decisions with AI-powered analysis.",
+    title: "表答博客",
+    description: "表答博客分享如何将分散的数据转化为智能、数据驱动决策的见解、技巧和案例，利用 AI 分析赋能。",
     images: [`${siteUrl}/opengraph-image.png`],
   },
   robots: {
@@ -71,10 +71,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+  <html lang="zh" suppressHydrationWarning>
       <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-MRYQ5T9FHK"
+          src="https://www.googletagmanager.com/gtag/js?id=G-FTC89TSX1V"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -82,7 +82,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-MRYQ5T9FHK');
+            gtag('config', 'G-FTC89TSX1V');
           `}
         </Script>
       </head>
