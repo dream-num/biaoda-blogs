@@ -85,13 +85,22 @@ export async function getPostFromNotion(pageId: string): Promise<Post | null> {
     const description = firstParagraph.slice(0, 160) + (firstParagraph.length > 160 ? "..." : "");
 
     const properties = (page as any).properties;
+
+    // 优先使用 Notion 中的 Slug 属性
+    let slug: string;
+    const customSlug = properties.Slug?.rich_text?.[0]?.plain_text || properties.Slug?.title?.[0]?.plain_text || page.id;
+    
+      slug = customSlug
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .replace(/-{2,}/g, '-');
+      if (!slug) slug = page.id.replace(/-/g, '').slice(0, 12);
+
     const post: Post = {
       id: page.id,
       title: properties.Title?.title?.[0]?.plain_text || "Untitled",
-      slug: (properties.Title?.title?.[0]?.plain_text || "untitled")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, ""),
+      slug,
       coverImage: properties["Featured Image"]?.url || undefined,
       description,
       date: properties["Published Date"]?.date?.start || new Date().toISOString(),
